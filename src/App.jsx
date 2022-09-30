@@ -7,6 +7,8 @@ import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
+import './App.css'
+import SkillList from './SkillList'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -21,6 +23,25 @@ const App = () => {
   const handleSignupOrLogin = () => {
     setUser(authService.getUser())
   }
+
+  const puppies = [
+    {
+      name: 'Ruby', 
+      breed: 'Cheese Hound', 
+      age: 2, 
+      toys: ['squeaky ball', 'stick', 'giant rope toy']
+    },{
+      name: 'Liam', 
+      breed: 'Schnauzer', 
+      age: 2, 
+      toys: ['green duck', 'purple duck', 'yellow duck']
+    },{
+      name: 'Franklin', 
+      breed: 'Border Collie', 
+      age: 15, 
+      toys: ['deer antler', 'stuffed pig', 'squeaky duck']
+    }
+  ]
 
   return (
     <>
@@ -50,6 +71,7 @@ const App = () => {
           }
         />
       </Routes>
+      <SkillList />
     </>
   )
 }
