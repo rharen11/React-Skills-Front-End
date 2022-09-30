@@ -24,22 +24,22 @@ const App = () => {
     setUser(authService.getUser())
   }
 
-  const puppies = [
+  const skills = [
     {
-      name: 'Ruby', 
-      breed: 'Cheese Hound', 
-      age: 2, 
-      toys: ['squeaky ball', 'stick', 'giant rope toy']
+      name: 'HTML', 
+      fluency: 'intermediate', 
+      version: 5, 
+      projects: ['swept away', 'portfolio', 'Newt']
     },{
-      name: 'Liam', 
-      breed: 'Schnauzer', 
-      age: 2, 
-      toys: ['green duck', 'purple duck', 'yellow duck']
+      name: 'CSS', 
+      fluency: 'intermediate', 
+      version: 3, 
+      projects: ['swept away', 'Mongoose Movies', 'Newt']
     },{
-      name: 'Franklin', 
-      breed: 'Border Collie', 
-      age: 15, 
-      toys: ['deer antler', 'stuffed pig', 'squeaky duck']
+      name: 'Javascript', 
+      fluency: 'advanced', 
+      version: 5, 
+      projects: ['Sonoma Hikes', 'portfolio', 'Newt']
     }
   ]
 
@@ -71,7 +71,7 @@ const App = () => {
           }
         />
       </Routes>
-      <SkillList />
+      <SkillList skills={skills}/>
     </>
   )
 }
