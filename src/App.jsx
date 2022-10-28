@@ -9,6 +9,7 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
 import './App.css'
 import SkillList from './SkillList'
+import AddSkill from './pages/AddSkill/AddSkill'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -69,6 +70,10 @@ const App = () => {
               <Navigate to="/login" />
             )
           }
+        />
+        <Route
+          path="/add"
+          element={<AddSkill />}
         />
       </Routes>
       <SkillList skills={skills}/>
