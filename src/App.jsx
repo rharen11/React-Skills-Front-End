@@ -75,8 +75,11 @@ const App = () => {
           path="/add"
           element={<AddSkill />}
         />
+        <Route
+          path="/skills"
+          element={<SkillList skills={skills}/>}
+        />
       </Routes>
-      <SkillList skills={skills}/>
     </>
   )
 }
