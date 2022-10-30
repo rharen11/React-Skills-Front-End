@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 
 function AddSkill(props) {
     
@@ -10,6 +10,12 @@ function AddSkill(props) {
 
   const [validForm, setValidForm] = useState(false)
 
+  const formElement = useRef()
+
+  useEffect(() => {
+		formElement.current.checkValidity() ? setValidForm(true) : setValidForm(false)
+	}, [formData])
+
   const handleChange = evt => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value })
   }
@@ -17,7 +23,7 @@ function AddSkill(props) {
 	return (
 		<>
 			<h1>Add Skill</h1>
-			<form autoComplete="off">
+			<form autoComplete="off" ref={formElement}>
 				<div className="form-group mb-3">
 					<label htmlFor="name-input" className="form-label">
 						Skill's Name (required)
@@ -63,6 +69,7 @@ function AddSkill(props) {
 					<button
 						type="submit"
 						className="btn btn-primary btn-fluid"
+            disabled={!validForm}
 					>
 						Add Skill
 					</button>
