@@ -7,6 +7,7 @@ const NavBar = ({ user, handleLogout }) => {
         React Skills 
         {user ?
           <nav>
+            <Link to="/">Home</Link>
             <Link to="/skills">Skills</Link>
             <Link to="/add">Add Skill</Link>
             <Link to="" onClick={handleLogout}>Log Out</Link>

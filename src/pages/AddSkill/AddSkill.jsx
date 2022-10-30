@@ -1,6 +1,14 @@
 import { useState } from "react"
 
 function AddSkill(props) {
+    
+  const [formData, setFormData] = useState({
+      name: '',
+      fluency: '',
+      years: 0
+    })
+  
+
 	return (
 		<>
 			<h1>Add Skill</h1>
@@ -14,6 +22,7 @@ function AddSkill(props) {
 						className="form-control"
 						id="name-input"
 						name="name"
+            value={formData.name}
 						required
 					/>
 				</div>
@@ -26,6 +35,7 @@ function AddSkill(props) {
 						className="form-control"
 						id="fluency-input"
 						name="fluency"
+            value={formData.fluency}
 						required
 					/>
 				</div>
@@ -38,6 +48,7 @@ function AddSkill(props) {
 						className="form-control"
 						id="years-input"
 						name="years"
+            value={formData.years}
 					/>
 				</div>
 				<div className="d-grid">
