@@ -7,8 +7,13 @@ function AddSkill(props) {
       fluency: '',
       years: 0
     })
-  
 
+  const [validForm, setValidForm] = useState(false)
+
+  const handleChange = evt => {
+    setFormData({ ...formData, [evt.target.name]: evt.target.value })
+  }
+  
 	return (
 		<>
 			<h1>Add Skill</h1>
@@ -23,6 +28,7 @@ function AddSkill(props) {
 						id="name-input"
 						name="name"
             value={formData.name}
+            onChange={handleChange}
 						required
 					/>
 				</div>
@@ -36,6 +42,7 @@ function AddSkill(props) {
 						id="fluency-input"
 						name="fluency"
             value={formData.fluency}
+            onChange={handleChange}
 						required
 					/>
 				</div>
@@ -49,6 +56,7 @@ function AddSkill(props) {
 						id="years-input"
 						name="years"
             value={formData.years}
+            onChange={handleChange}
 					/>
 				</div>
 				<div className="d-grid">
